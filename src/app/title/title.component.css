@@ -1,0 +1,51 @@
+.page-title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+}
+
+.page-title img {
+    height: 90px;
+    width: auto;
+}
+
+
+.page-title h1 {
+    color: white;
+    border: 5px solid black;
+    padding: 20px;
+    border-radius: 15px;
+}
+
+.button-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+
+.page-title button {
+    padding: 10px 20px;
+    font-size: 1em;
+    background: hsl(0, 100%, 40%, 0.1);
+    border: 3px solid hsl(0, 100%, 40%);
+    color: hsl(0, 100%, 40%);
+    border-radius: 15px;
+}
+
+.page-title button:hover,
+.page-title button:focus-visible {
+    background: hsl(0, 100%, 40%, 0.2);
+}
+
+.back-btn {
+    padding: 10px 30px;
+    font-size: 1em;
+    background: hsl(0, 100%, 40%, 0.1);
+    border: 3px solid hsl(0, 100%, 40%);
+    color: hsl(0, 100%, 40%);
+    border-radius: 15px;
+    margin-right: 45px;
+    margin-top: 10px;
+}

@@ -1,0 +1,24 @@
+.panel-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 5vh;
+    margin-right: 8vh;
+}
+
+.build-workout-panel {
+    margin: 5vh;
+    width: 45vh;
+    height: 75vh;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-image: url('panel-assests/Logo.jpg');
+    color: rgb(12, 227, 108);
+    text-align: center;
+    transition: transform 0.3s ease-in-out;
+}
+
+.build-workout-panel:hover {
+    transform: scale(1.05); /* Adjust as needed */
+    cursor: pointer;
+}

@@ -1,0 +1,10 @@
+<div class="workout-card-container">
+    <div class="skills-card">
+        <div class="card-title"> 
+         <h1>{{ workout.name }}</h1>
+        </div> 
+         <ul class="skills-list">
+             <li *ngFor="let exercise of workout.exercises">{{ exercise }}</li>
+         </ul>
+     </div>
+</div>

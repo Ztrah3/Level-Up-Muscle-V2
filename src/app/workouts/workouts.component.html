@@ -1,0 +1,2 @@
+<app-title [showBackButton]="true"></app-title>
+<app-workout-card *ngFor="let workout of workouts; let i = index" [workout]="workout" (delete)="deleteWorkout(i)" (openEditModal)="openEditModal(i)"></app-workout-card>

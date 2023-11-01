@@ -1,0 +1,32 @@
+.workout-card-container {
+    display: flex;
+    justify-content: center; 
+    gap: 20px;
+    align-items: center;
+    margin-bottom: 50px;
+}
+
+.skills-card {
+    display: flex;
+    text-align: center;
+    width: 35vh;
+    min-width: 200px; 
+    max-width: 500px; 
+    min-height: 350px; 
+    max-height: 800px; 
+    flex-direction: column;
+    box-shadow: 0px 0px 10px #000000;
+    background-image: linear-gradient(to bottom, black, black);
+    background-repeat: no-repeat;
+    background-size: 100% 25%;
+    color: white;
+}
+
+.card-title {
+   padding-bottom: 20px;
+}
+
+.skills-list {
+    list-style-type: none;
+    padding: 0;
+}
