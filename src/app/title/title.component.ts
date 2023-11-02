@@ -1,5 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { Router } from '@angular/router';
+import { faBars } from '@fortawesome/free-solid-svg-icons';
 
 
 @Component({
@@ -15,4 +16,5 @@ export class TitleComponent {
   goBack() {
     this.router.navigate(['/']);
   }
+  faBars = faBars;
 }

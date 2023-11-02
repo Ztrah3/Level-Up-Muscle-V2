@@ -10,6 +10,8 @@ import { TitleComponent } from './title/title.component';
 import { WorkoutCardComponent } from './workout-card/workout-card.component';
 import { WorkoutsComponent } from './workouts/workouts.component';
 import { ProductTableComponent } from './product-table/product-table.component';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { AboutComponent } from './about/about.component'
 
 @NgModule({
   declarations: [
@@ -20,11 +22,13 @@ import { ProductTableComponent } from './product-table/product-table.component';
     TitleComponent,
     WorkoutCardComponent,
     WorkoutsComponent,
-    ProductTableComponent
+    ProductTableComponent,
+    AboutComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FontAwesomeModule
   ],
   providers: [],
   bootstrap: [AppComponent]
