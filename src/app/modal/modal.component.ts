@@ -8,6 +8,7 @@ import { Router } from '@angular/router';
 })
 export class ModalComponent {
   @Output() closeModal = new EventEmitter<void>();
+  @Output() openModal = new EventEmitter<void>();
   @Output() generateWorkout = new EventEmitter<any>();
 
   @ViewChild('workoutName') workoutName!: ElementRef;
@@ -27,4 +28,12 @@ export class ModalComponent {
   }
 
   constructor(private router: Router) { }
+
+  ngOnInit() {
+    this.openModal.emit();
+  }
+
+  onCancel() {
+    this.closeModal.emit();
+  }
 }

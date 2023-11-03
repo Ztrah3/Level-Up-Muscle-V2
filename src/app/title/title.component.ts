@@ -9,12 +9,7 @@ import { faBars } from '@fortawesome/free-solid-svg-icons';
   styleUrls: ['./title.component.css']
 })
 export class TitleComponent {
-  @Input() showBackButton = false;
-
   constructor(private router: Router) { }
 
-  goBack() {
-    this.router.navigate(['/']);
-  }
   faBars = faBars;
 }
