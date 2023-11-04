@@ -11,14 +11,14 @@
     display: flex;
     text-align: center;
     width: 35vh;
-    min-width: 200px; 
+    min-width: 400px; 
     max-width: 500px; 
-    min-height: 350px; 
-    max-height: 600px; 
+    min-height: 500px; 
+    max-height: 800px; 
     flex-direction: column;
     box-shadow: 0px 0px 10px #000000;
-    background-image: linear-gradient(to bottom, black, black);
-    background-repeat: no-repeat;
+    background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSx8bqHtsK77Usggu5Tztby4QFCVBI89q0W-Q&usqp=CAU);
+    background-size: cover;
     color: white;
 }
 
@@ -29,4 +29,5 @@
 .skills-list {
     list-style-type: none;
     padding: 0;
+    font-size: 25px;
 }
