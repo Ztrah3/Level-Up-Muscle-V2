@@ -1,9 +1,11 @@
 import { Injectable } from '@angular/core';
 
+// Injectable, meaning this service can be used in any part of the app
 @Injectable({
   providedIn: 'root'
 })
 export class generateWorkoutCardService {
+  // Dictionary for compound exercises for each muscle group
   componentExercises: { [key: string]: string[] } = { 
     chest: ["Bench press (barbell or dumbbell)", "Incline bench press (barbell  or dumbbell)", "Decline bench press (barbell or dumbbell)", "Push ups", "Incline Push ups", "Decline Push ups"
     , "close grip bench press (barbell or dumbbell)", "Floor press (barbell or dumbbell)", "Landmine press", "Incline chest press machine", "Decline chest press machine", "chest press machine", "Chest dips",], 
@@ -17,6 +19,7 @@ export class generateWorkoutCardService {
     core: ["Planks", "Russian twists", "Bicycle crunches", "Sit ups", "Lying leg raises", "Mountain climbers", "Oblique crunches"],
     cardio: ["Treadmill", "Stairmaster", "Jump rope", "Row machine", "Shadow boxing", "Elliptical", "Stationary bike"],
     shoulders: ["Seated barebell shoulder press", "Arnold press", "Seated dumbbell shoulder press", "Military press", "Half kneeling landmine press", "Smith machine press", "Machine shoulder press"] };
+  // Dictionary for isolated exercises for each muscle group
   isolatedExercises: { [key: string]: string[] } = { 
     chest: ["Dumbbell flyes", "Incline dumbbell flyes", "Decline dumbbell flyes", "Cable flyes", "Incline cable flyes", "Decline cable flyes", "Chest pullovers", "Pec deck machine",], 
     triceps: ["Dumbbell skull crushers", "Overhead Dumbbell tricep extensions", "Cable tricep push down", "Single arm cable tricep push down"], 
@@ -26,13 +29,17 @@ export class generateWorkoutCardService {
     core: ["Flutter kicks", "Hanging leg raises", "Hollow body hold", "V-sits", "ab rollouts", "Cable crunches"],
     shoulders: ["Lateral raise", "Reverse flye", "Front raise", "Cable lateral raise", "Face pulls", "Cable front raise"]  };
       
+    // Array that hold the generated workouts
     workouts: { name: string, exercises: string[], workoutGoal?: string, cardio?: string }[] = [];
 
+    // Method to generates a workout based on provided parameters
     generate(workoutName: string, muscleGroup: string, workoutGoal: string, cardio: string) {
+      // Check if the maximum number of workouts has been reached
       if (this.workouts.length < 20) {
+        // Initialize arrays for compound and isolated exercises
         let compoundExercises = [];
         let isolatedExercises = [];
-    
+        // Populate the exercise arrays based on the muscle group
         switch(muscleGroup) {
           case 'Chest + Triceps':
             compoundExercises = [
@@ -88,8 +95,9 @@ export class generateWorkoutCardService {
             compoundExercises = this.getRandomExercises(this.componentExercises[muscleGroup.toLowerCase()], 3);
             isolatedExercises = this.getRandomExercises(this.isolatedExercises[muscleGroup.toLowerCase()], 3);
         }
-    
+        // Initialize prefix for sets and reps
         let prefix = '';
+        // Determine the prefix based on the workout goal
         switch(workoutGoal) {
           case 'Increase Muscle':
             prefix = '4 sets x 8-12 reps ';
@@ -101,31 +109,34 @@ export class generateWorkoutCardService {
             prefix = '4 sets x 12-15 reps ';
             break;
         }
-    
+        // Create a new workout object with the provided name, goal, and cardio preference
+        // and the generated list of exercises
         const workout = {
           name: workoutName,
           exercises: [...compoundExercises, ...isolatedExercises].map(exercise => prefix + exercise),
           workoutGoal: workoutGoal,
           cardio: cardio
         };
-    
+         // If cardio is 'Yes', add a cardio exercise to the workout
         if (cardio === 'Yes') {
           const cardioExercise = this.getRandomExercises(this.componentExercises['cardio'], 1);
           workout.exercises.push(...cardioExercise);
         }
-    
+        
+        // Add the new workout to the list of workouts
         this.workouts.push(workout);
       } else {
         console.log('You have reached the maximum number of workout cards.');
       }
     }
+    // Method to return a specified number of random exercises from a given array
     getRandomExercises(exercises: string[], count: number): string[] {
       if (!exercises) {
         return [];
       }
       return this.shuffleArray(exercises).slice(0, count);
     }
-
+  // Method that shuffles an array in place
   shuffleArray(array: any[]): any[] {
     for (let i = array?.length - 1; i > 0; i--) {
       const j = Math.floor(Math.random() * (i + 1));
@@ -133,6 +144,6 @@ export class generateWorkoutCardService {
     }
     return array;
   }
-
+  // The constructor is empty, meaning no dependencies are being injected into this service
   constructor() { }
 }

@@ -1,5 +1,8 @@
+<!-- Overlay for the modal -->
 <div class="modal-overlay">
+    <!-- Container for the modal itself -->
     <div class="modal">
+         <!-- Labels and input field for the workout generation -->
         <label class="WorkoutNameLabel" htmlFor="workoutName">Workout Name:</label>
         <input #workoutName class="workoutNameInput" id="workoutName" type="text" placeholder="i.e. chest day">
         <label class="muscleGroupLabel" htmlFor="muscleGroup">Target Muscle Group:</label>
@@ -31,6 +34,7 @@
             <option>Yes</option>
             <option>No</option>
         </select>
+        <!-- Next and Cancel button container -->
         <div class="btn-container">
             <button class="btn" (click)="generate()">Next</button>
             <button class="btn-danger" (click)="onCancel()">Cancel</button>

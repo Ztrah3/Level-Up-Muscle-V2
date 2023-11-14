@@ -1,11 +1,19 @@
+<!-- Render title component -->
 <app-title></app-title>
+<!-- Eender modal component -->
+<!-- generateWorkout, closeModal, and openModal methods are bound to the generateWorkout, closeModal, and openModal events respectively -->
+<!-- Modal is only shown if showModal is true -->
 <app-modal 
   (generateWorkout)="onGenerateWorkout($event)" 
   *ngIf="showModal" 
   (closeModal)="onCloseModal()" 
   (openModal)="onOpenModal()"
 ></app-modal>
+<!-- Render panels component -->
+<!-- buildWorkout method is bound to the buildWorkout event -->
 <app-panels (buildWorkout)="showModal = true"></app-panels>
+<!-- Render about component -->
 <app-about id="about"></app-about>
+<!-- Render product table component -->
 <app-product-table id="workoutPlans"></app-product-table>
 

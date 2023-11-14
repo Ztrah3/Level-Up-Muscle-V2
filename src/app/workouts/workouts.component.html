@@ -1,2 +1,5 @@
+<!-- rendering title component -->
 <app-title></app-title>
+<!-- Loop that generates a workout card for each workout in the workouts array -->
+<!-- Workout data is passed into the workout card, and the delete and openEditModal methods are bound to the delete and openEditModal events respectively -->
 <app-workout-card *ngFor="let workout of workouts; let i = index" [workout]="workout" (delete)="deleteWorkout(i)" (openEditModal)="openEditModal(i)"></app-workout-card>

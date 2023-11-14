@@ -1,9 +1,14 @@
+<!-- Main container for the workout card -->
 <div class="workout-card-container">
+    <!-- Container for the skills card -->
     <div class="skills-card">
+        <!-- Title of the workout card -->
         <div class="card-title"> 
          <h1>{{ workout.name }}</h1>
         </div> 
+        <!-- List of exercises in the workout -->
          <ul class="skills-list">
+            <!-- Loop that generates a list item for each exercise in the workout -->
              <li *ngFor="let exercise of workout.exercises">{{ exercise }}</li>
          </ul>
      </div>

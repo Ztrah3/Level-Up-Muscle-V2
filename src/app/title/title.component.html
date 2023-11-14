@@ -1,14 +1,19 @@
+<!-- Main container for the navigation bar -->
 <nav class="navbar sticky-top bg-dark">
     <div class="container">
+      <!-- Logo of the website -->
       <a class="navbar-brand" href="#">
           <img src="assets/title-assests/Logo.jpg" alt="logo" style="width: 75px; height: 75px;">
       </a>
+      <!-- Button that toggles the navigation bar on smaller screens -->
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <fa-icon [icon]="faBars"></fa-icon>
       </button>
 
+       <!-- Container for the navigation links -->
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto justify-content-end">
+          <!-- Navigation links -->
           <li class="nav-item active">
             <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
           </li>
