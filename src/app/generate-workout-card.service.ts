@@ -100,20 +100,20 @@ export class generateWorkoutCardService {
         // Determine the prefix based on the workout goal
         switch(workoutGoal) {
           case 'Increase Muscle':
-            prefix = '4 sets x 8-12 reps ';
+            prefix = ' - 4 sets x 8-12 reps ';
             break;
           case 'Increase Strength':
-            prefix = '4 sets x 6-8 reps ';
+            prefix = ' - 4 sets x 6-8 reps ';
             break;
           case 'Lean up':
-            prefix = '4 sets x 12-15 reps ';
+            prefix = ' - 4 sets x 12-15 reps ';
             break;
         }
         // Create a new workout object with the provided name, goal, and cardio preference
         // and the generated list of exercises
         const workout = {
           name: workoutName,
-          exercises: [...compoundExercises, ...isolatedExercises].map(exercise => prefix + exercise),
+          exercises: [...compoundExercises, ...isolatedExercises].map(exercise => exercise + prefix),
           workoutGoal: workoutGoal,
           cardio: cardio
         };
